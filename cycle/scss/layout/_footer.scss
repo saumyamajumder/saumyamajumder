@@ -1,0 +1,228 @@
+//Footer
+
+.contact {
+    padding: 80px 0 30px;
+    @include md-max{
+        padding: 60px 0 30px;
+    }
+    .contactform {
+        .form-group {
+            margin-bottom: 20px;
+            @include display-position(relative);
+
+            input,
+            textarea {
+                @include border-radius(0);
+                border: 1px solid $blackV2;
+
+                &:focus-visible {
+                    outline: none;
+                }
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            input {
+                height: 45px
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+        }
+    }
+}
+
+
+
+
+footer {
+    color: $white;
+    padding: 230px 0 40px;
+    @include display-position(relative);
+    @include md-max{
+        padding: 175px 0 40px;
+    }
+    &::before{
+        @include display-position(absolute);
+        content: '';
+        top: 0;
+        left: 0;
+        background-image: url(../images/footer-bg.jpg);
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+        height: 170px;
+        width: 100%;
+    }
+
+    .footer-module {
+        .footer-logo {
+            max-width: 200px;
+            width: 100%;
+        }
+
+        .footer-headeing {
+            margin-bottom: 30px;
+
+            .h4 {
+                color: $white;
+            }
+        }
+
+        p {
+            color: $gray;
+            font-size: 15px;
+        }
+
+        .footer-content {
+
+
+
+            ul {
+                li {
+                    list-style: none;
+                    margin-bottom: 5px;
+                    @include flexbox;
+                    @include align-items(flex-start);
+
+
+                    .icon {
+                        margin-right: 10px;
+
+                        i {
+                            color: $orange;
+                        }
+                    }
+
+                    a {
+                        color: $gray;
+                        font-size: 14px;
+
+                        &:hover {
+                            color: $orange;
+                        }
+                    }
+                }
+
+                &.info {
+                    margin-top: 15px;
+                }
+
+                &.footermenu {
+                    li {
+                        @include transition(all, 0.5s, ease-in-out);
+
+                        &:hover {
+                            padding-left: 10px;
+                            @include transition(all, 0.5s, ease-in-out);
+                        }
+                    }
+                }
+            }
+
+            &.subscribe-form {
+                form {
+                    @include flexbox;
+
+                    input {
+                        height: 45px;
+                        border: 1px solid $white;
+                        padding-left: 10px;
+                    }
+                    .page-btn{
+                        padding: 8px 26px;
+                        &:hover{
+                            padding: 8px 26px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include md-max {
+            margin-bottom: 30px;
+        }
+    }
+
+    .flowus {
+        margin-top: 20px;
+
+        ul {
+            @include flexbox;
+            @include flex-wrap(wrap);
+
+            li {
+                list-style: none;
+                color: $white;
+
+                a {
+                    color: $gray;
+                    padding: 10px;
+
+                    &:hover {
+                        color: $orange;
+                    }
+                }
+            }
+        }
+    }
+
+    .onlinepayment {
+        margin-top: 20px;
+
+        ul {
+            li {
+                margin-right: 5px;
+                list-style: none;
+
+                img {
+                    background-color: $white;
+                    padding: 3px;
+                }
+
+            }
+        }
+
+    }
+
+    .footerbuttom {
+        margin-top: 40px;
+        padding-top: 40px;
+        border-top: 1px solid #cccccc3d;
+
+        p {
+            font-size: 15px;
+        }
+
+        @include md-max {
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+    }
+
+}
+
+
+
+// Loder
+
+#loader {
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    z-index: 9;
+
+    img {
+        width: 150px;
+    }
+}

@@ -1,0 +1,123 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+
+body,
+
+p,
+li,
+a,
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+    // font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: $blackV2;
+}
+
+.h1,
+h1 {
+    font-size: 40px;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+
+    @include md-max {
+        font-size: 40px;
+    }
+
+
+
+}
+
+.h2,
+h2 {
+    font-size: 35px;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+
+    @include md-max {
+        font-size: 30px;
+    }
+
+}
+
+.h3,
+h3 {
+    font-size: 30px;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+
+    @include md-max {
+        font-size: 28px;
+    }
+
+}
+
+.h4,
+h4 {
+    font-size: 28px;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+
+    @include md-max {
+        font-size: 25px;
+    }
+}
+
+.h5,
+h5 {
+    font-size: 25px;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+
+    @include md-max {
+        font-size: 20px;
+    }
+
+}
+
+.h6,
+h6 {
+    font-size: 22px;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+
+    @include md-max {
+        font-size: 18px;
+    }
+}
+
+p,
+li,
+a {
+    font-size: 17px;
+    line-height: 28px;
+    font-weight: 400;
+    color: $black;
+
+    @include md-max {
+        font-size: 16px;
+    }
+}

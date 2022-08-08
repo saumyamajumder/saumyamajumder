@@ -1,0 +1,123 @@
+.up-down {
+  animation: up-down linear 4s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: up-down linear 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: up-down linear 4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: up-down linear 4s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;
+  -ms-animation: up-down linear 4s;
+  -ms-animation-iteration-count: infinite;
+  -ms-transform-origin: 50% 50%;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translate(1px, 20px);
+  }
+
+  24% {
+    transform: translate(1px, 30px);
+  }
+
+  50% {
+    transform: translate(1px, 12px);
+  }
+
+  74% {
+    transform: translate(1px, 22px);
+  }
+
+  100% {
+    transform: translate(1px, 22px);
+  }
+}
+
+@-moz-keyframes up-down {
+  0% {
+    -moz-transform: translate(1px, 20px);
+  }
+
+  24% {
+    -moz-transform: translate(1px, 30px);
+  }
+
+  50% {
+    -moz-transform: translate(1px, 12px);
+  }
+
+  74% {
+    -moz-transform: translate(1px, 22px);
+  }
+
+  100% {
+    -moz-transform: translate(1px, 22px);
+  }
+}
+
+.left-right {
+  animation: left-right linear 4s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: left-right linear 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: left-right linear 4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: left-right linear 4s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;
+  -ms-animation: left-right linear 4s;
+  -ms-animation-iteration-count: infinite;
+  -ms-transform-origin: 50% 50%;
+}
+
+@keyframes left-right {
+  0% {
+    transform: translate(20px, 1px);
+  }
+
+  24% {
+    transform: translate(30px, 10px);
+  }
+
+  50% {
+    transform: translate(12px, 1px);
+  }
+
+  74% {
+    transform: translate(22px, 1px);
+  }
+
+  100% {
+    transform: translate(22px, 1px);
+  }
+}
+
+@-moz-keyframes left-right {
+  0% {
+    -moz-transform: translate(20px, 1px);
+  }
+
+  24% {
+    -moz-transform: translate(30px, 1px);
+  }
+
+  50% {
+    -moz-transform: translate(12px, 1px);
+  }
+
+  74% {
+    -moz-transform: translate(22px, 1px);
+  }
+
+  100% {
+    -moz-transform: translate(22px, 1px);
+  }
+}

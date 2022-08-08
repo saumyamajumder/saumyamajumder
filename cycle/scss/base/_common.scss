@@ -1,0 +1,49 @@
+a {
+    color: $black;
+    text-decoration: none;
+    // background-image: linear-gradient(transparent calc(100% - 1px), $black 1px);
+    // background-size: 100% 100%;
+    // background-repeat: no-repeat;
+    // background-position: 100%;
+    @include transition(all, 0.5s, ease-in-out);
+
+    &:hover {
+        color: $black;
+        @include transition(all, 0.5s, ease-in-out);
+        // background-size: 0% 100%;
+        // background-repeat: no-repeat;
+        // background-position: 100%;
+    }
+}
+
+
+::-webkit-input-placeholder {
+    /* Edge */
+    color: $black;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $black;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+::placeholder {
+    color: $black;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+
+
+
+.common-padding {
+    padding: 80px 0;
+    @include md-max {
+        padding: 60px 0;
+    }
+}
+

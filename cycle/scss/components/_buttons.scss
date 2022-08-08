@@ -1,0 +1,21 @@
+.page-btn {
+    @include page-btn($orange, $white);
+    border: 1px solid $orange;
+
+
+    &:hover {
+        @include page-btn($gray, $black);
+        border: 1px solid $gray;
+    }
+}
+
+.page-btn-dark {
+    @include page-btn($orange, $white);
+    border: 1px solid $orange;
+
+
+    &:hover {
+        @include page-btn($black, $white);
+        border: 1px solid $gray;
+    }
+}

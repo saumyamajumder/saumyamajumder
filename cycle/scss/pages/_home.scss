@@ -1,0 +1,207 @@
+.module1 {
+    @include md-max {
+        padding-top: 0;
+    }
+
+    .module1image {
+        @include display-position(absolute);
+        top: -125px;
+        z-index: 5;
+
+        @include md-max {
+            @include display-position(relative);
+            top: 0;
+            z-index: 5;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        @include rwd-max(479) {
+            max-width: 280px;
+        }
+    }
+
+    .modulecontent {
+        .page-btn-dark {
+            margin-top: 20px;
+        }
+
+        @include md-max {
+            padding-top: 40px;
+        }
+    }
+}
+
+
+.module2 {
+    @include md-max {
+        padding-top: 0;
+    }
+
+    .box-module {
+        box-shadow: 0 0 20px 0 rgb(0 0 0 / 7%);
+        padding: 30px 20px;
+        text-align: left;
+        @include display-position(relative);
+        @include transition(all, 0.5s, ease-in-out);
+        z-index: 2;
+        cursor: pointer;
+        @include border-radius(5px);
+        background-color: $orange;
+        color: $white;
+
+        @include md-max {
+            margin-bottom: 25px;
+        }
+
+        &::before {
+            @include display-position(absolute);
+            top: 0;
+            content: '';
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background-color: $gray;
+            @include transition(all, 0.5s, ease-in-out);
+            z-index: -1;
+        }
+
+        &:hover::before {
+            @include transition(all, 0.5s, ease-in-out);
+            height: 100%;
+        }
+
+        figure {
+            max-width: 100px;
+
+            img {
+                filter: brightness(0) invert(1);
+            }
+
+        }
+
+
+        .box-module-content {
+            margin-top: 15px;
+
+            .h5,
+            p {
+                color: $white;
+            }
+        }
+
+        &:hover {
+            @include transition(all, 0.5s, ease-in-out);
+            color: $black;
+
+            .h5,
+            p {
+                color: $blackV2;
+            }
+
+            figure {
+                img {
+                    filter: brightness(0) invert(0);
+                }
+
+            }
+
+        }
+    }
+}
+
+// image
+.imagebg {
+    @include background-img(cover, no-repeat, bottom);
+    width: 100%;
+    height: 500px;
+    @include display-position(relative);
+
+    @include md-max {
+        height: 400px;
+    }
+
+    &::before {
+        @include display-position(absolute);
+        content: '';
+        top: 0;
+        left: 0;
+        background-image: url(../images/blog-s-2.png);
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+        height: 70px;
+        width: 100%;
+    }
+
+    &::after {
+        @include display-position(absolute);
+        content: '';
+        bottom: 0;
+        left: 0;
+        background-image: url(../images/blog-s-3.png);
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+        height: 70px;
+        width: 100%;
+    }
+}
+
+
+.total-item-gallery {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+
+    .item-gallery {
+        width: calc((100% - 40px) / 4);
+        margin: 5px;
+        box-shadow: 0 0 20px 0 rgb(0 0 0 / 7%);
+
+        @include md-max {
+            width: calc((100% - 30px) / 3);
+        }
+
+        @include sm-max {
+            width: calc((100% - 20px) / 2);
+        }
+
+        figure {
+            @include flexbox;
+            overflow: hidden;
+
+            img {
+                @include transition(all, 0.5s, ease-in-out);
+            }
+        }
+
+        &:hover img {
+            @include transition(all, 0.5s, ease-in-out);
+            @include transform(scale(1.2));
+        }
+    }
+}
+
+.module3 {
+    .module1image {
+        @include display-position(absolute);
+        top: -50px;
+
+        @include md-max {
+            top: 0px;
+            @include display-position(relative);
+        }
+    }
+
+    @include md-max {
+        padding-top: 60px;
+        @include display-position(relative);
+    }
+
+    @include md-max {
+        .modulecontent {
+            padding-top: 0;
+        }
+    }
+}

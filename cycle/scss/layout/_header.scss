@@ -1,0 +1,297 @@
+header {
+    padding: 30px 0 15px;
+    @include display-position(absolute);
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+    @include md-max {
+        padding-top: 15px;
+    }
+
+    .logo {
+        line-height: normal;
+
+        &.normallogo {
+            @include display(flex !important);
+
+            // @include md-max {
+            //     @include display(none !important);
+            // }
+        }
+
+        a {
+            background-image: none
+        }
+
+        &.stickylogo {
+            @include display(none !important);
+
+            // @include md-max {
+            //     @include display(flex !important);
+            // }
+        }
+    }
+
+
+    .menu {
+        @include flexbox;
+        @include justify-content(flex-end);
+
+        @include md-max {
+            order: 2;
+        }
+
+        ul {
+            @include flexbox;
+            list-style: none;
+
+            @include md-max {
+                @include flex-direction(column);
+                width: 100%;
+                @include display(block);
+                height: 0;
+                padding: 0;
+                opacity: 1;
+                visibility: hidden;
+                overflow: hidden;
+                @include transition(all, 0.5s, ease-in-out);
+                @include display-position(absolute);
+                z-index: 9;
+                left: 0;
+                background-color: $gray;
+                top: 0px;
+                padding-top: 50px;
+                &.is-active {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+            }
+
+
+            li {
+                padding-left: 15px;
+                padding-right: 15px;
+
+
+                a {
+                    color: $white;
+                    font-size: 18px;
+                    background-image: none;
+                    @include display-position(relative);
+
+                    @include md-max {
+                        color: $black;
+                    }
+
+                    &::before {
+                        @include display-position(absolute);
+                        content: '';
+                        left: 0;
+                        width: 0%;
+                        background-color: $orange;
+                        height: 2px;
+                        bottom: -35px;
+                        @include transition(all, 0.5s, ease-in-out);
+
+                        @include lg-max {
+                            bottom: -27px;
+                        }
+                    }
+
+                    &:hover,
+                    &.active {
+                        color: $gray;
+                        background-image: none;
+
+                        &::before {
+                            width: 100%;
+                            @include transition(all, 0.5s, ease-in-out);
+
+                            @include md-max {
+                                @include display(none);
+                            }
+                        }
+
+                        @include md-max {
+                            color: $blackV2;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .burger {
+            @include display-position(relative);
+            @include display(none);
+            @include transform(rotate(0deg));
+            @include transition(all, 0.5s, ease-in-out);
+            cursor: pointer;
+            width: 2rem;
+            height: 1rem;
+            border: none;
+            outline: none;
+            opacity: 0;
+            visibility: hidden;
+            background: none;
+            top: 0px;
+            right: 0px;
+            z-index: 999;
+         
+
+            .burger-line {
+                @include display(block);
+                @include display-position(absolute);
+                @include transition(all, 0.5s, ease-in-out);
+                @include border-radius(0.25rem);
+                width: 100%;
+                height: 2px;
+                left: 0;
+                border: none;
+                outline: none;
+                opacity: 1;
+                background: $orange;
+
+                &:nth-child(1) {
+                    top: 0;
+                }
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    top: 0.5rem;
+                }
+
+                &:nth-child(4) {
+                    top: 1rem;
+                }
+            }
+
+            &.is-active {
+                .burger-line {
+                    background: $orange;
+
+                    &:nth-child(1),
+                    &:nth-child(4) {
+                        top: 1.25rem;
+                        width: 0%;
+                        left: 50%;
+                    }
+
+                    &:nth-child(2) {
+                        @include transform(rotate(45deg));
+                    }
+
+                    &:nth-child(3) {
+                        @include transform(rotate(-45deg));
+                    }
+                }
+            }
+
+            @include md-max {
+                @include display(block);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            @include md-max {
+                order: 1;
+            }
+        }
+    }
+
+    .account {
+        margin-left: 70px;
+
+        ul {
+            li {
+                list-style: none;
+                padding: 0 10px;
+
+                &:last-child {
+                    padding-right: 0;
+                }
+
+                a {
+                    padding: 5px;
+                    color: $white;
+                    background-image: none;
+                    @include display-position(relative);
+                }
+            }
+        }
+
+        .shopcount {
+            @include display-position(absolute);
+            @include border-radius(50%);
+            @include flexbox;
+            @include justify-content(center);
+            @include align-items(center);
+            top: -4px;
+            font-size: 10px;
+            background: $orange;
+            width: 16px;
+            height: 16px;
+            padding: 5px;
+            right: -5px;
+            color: $white;
+        }
+
+        @include md-max {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+
+    &.sticky {
+        @include display-position(fixed);
+        width: 100%;
+        @include transition(all, 0.5s, ease-in-out);
+        background-color: $white;
+        box-shadow: 0px 5px 17px -5px rgb(0 0 0 / 75%);
+        padding: 5px 0;
+
+        @include md-max {
+            @include display(none);
+        }
+
+        .row {
+            @include align-items(center);
+        }
+
+        ul {
+            li {
+                a {
+                    color: $blackV2;
+
+                    &:hover,
+                    &.active {
+                        color: $black;
+                    }
+
+                    &::before {
+                        bottom: -18px;
+                    }
+                }
+            }
+        }
+
+        .logo {
+            &.normallogo {
+                @include display(none !important);
+            }
+
+
+            &.stickylogo {
+                @include display(flex !important);
+                max-width: 100px;
+            }
+        }
+
+
+
+    }
+}
